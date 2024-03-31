@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "py-template"
+name = "CS-test"
 version = "0.1.0"
 description = ""
 license = "MIT"
 authors = ["p-sin <p-sinfield@live.co.uk>"]
 readme = "README.md"
-repository = "https://github.com/p-sin/py-template"
-packages = [{ include = "py_template" }]
+repository = "https://github.com/p-sin/CS-test"
+packages = [{ include = "CS-test" }]
 
 exclude = [
     ".github",
@@ -14,7 +14,6 @@ exclude = [
     ".pylintrc",
     "mypy.ini",
     ".coveragerc",
-    "Makefile",
     "scripts",
     "tests",
 ]
@@ -35,7 +34,6 @@ ruff = "^0.2.1"
 # typecheck
 mypy = "^1.0.1"
 typing-extensions = "^4.5.0"
-pandas-stubs = { version = "^1.5.3.230214", python = ">=3.10,<3.12" }
 types-python-slugify = "^8.0.0.2"
 types-requests = "^2.28.11.13"
 # test
@@ -45,26 +43,26 @@ pytest-mock = "^3.10.0"
 coverage = "^7.4.4"
 
 # Scripts that can be called from CLI
-[tool.poetry.scripts]
-py-template = "py_template.a:a"
+# [tool.poetry.scripts]
+# CS-test = "CS-test.a:a"
 
 [tool.mypy]
-mypy_path = ["py_template"]
+mypy_path = ["CS-test"]
 strict = true
 namespace_packages = false
 
 
 [tool.pytest.ini_options]
-pythonpath = ["py_template"]
-addopts = "--cov=py_template"
+pythonpath = ["CS-test"]
+addopts = "--cov=CS-test"
 testpaths = ["tests"]
 
 [tool.coverage.paths]
-source = ["py_template"]
+source = ["CS-test"]
 
 [tool.coverage.run]
 branch = true
-source = ["py_tepmplate"]
+source = ["CS-test"]
 
 [tool.coverage.report]
 show_missing = true
@@ -198,7 +196,7 @@ line-ending = "auto"
 convention = "google"
 
 [tool.ruff.lint.isort]
-known-first-party = ["py_template"]
+known-first-party = ["CS-test"]
 
 
 [build-system]
