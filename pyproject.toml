@@ -44,7 +44,7 @@ pytest-mock = "^3.10.0"
 coverage = "^7.4.4"
 
 [tool.poetry.scripts]
-CS_test = "CS_test.cli:CS_test"
+CS_test = "CS_test.cli:cs_test"
 
 [tool.mypy]
 mypy_path = ["CS_test"]
