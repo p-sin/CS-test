@@ -3,8 +3,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from CS_test.config import Config
-from CS_test.constants import Paths
+from cs_test.config import Config
+from cs_test.constants import Paths
 from tests.conftest import TestPathType
 
 
@@ -23,7 +23,7 @@ def test_ask_folder_name() -> None:
         (["C", "A", "B"], 2),
     ],
 )
-@patch("CS_test.config.Config.ask_folder_name", autospec=True)
+@patch("cs_test.config.Config.ask_folder_name", autospec=True)
 def test_set_folder_path(
     mock_folder: Mock,
     folder_names: list[str],
@@ -40,7 +40,7 @@ def test_set_folder_path(
 
     mock_folder.side_effect = folder_names
 
-    with patch("CS_test.config.Paths.PROJECTS_PATH", path):
+    with patch("cs_test.config.Paths.PROJECTS_PATH", path):
         config = Config()
         config.set_folder_path()
 
@@ -57,8 +57,8 @@ def test_create_test_folder(test_path: TestPathType) -> None:
     config = Config()
     config.project_name = "A"
 
-    with patch("CS_test.config.Paths.DATA_PATH", path), patch(
-        "CS_test.config.TIMESTAMP", "B"
+    with patch("cs_test.config.Paths.DATA_PATH", path), patch(
+        "cs_test.config.TIMESTAMP", "B"
     ):
         config.create_test_folder()
 
@@ -67,8 +67,8 @@ def test_create_test_folder(test_path: TestPathType) -> None:
     shutil.rmtree(path)
 
 
-@patch("CS_test.config.Config.set_folder_path")
-@patch("CS_test.config.Config.create_test_folder")
+@patch("cs_test.config.Config.set_folder_path")
+@patch("cs_test.config.Config.create_test_folder")
 def test_config_test(mock_folder: Mock, mock_path: Mock) -> None:
     """Assert that the correct methods are called."""
     config = Config()

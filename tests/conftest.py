@@ -4,7 +4,7 @@ from typing import Callable
 
 import pytest
 
-from CS_test.constants import Paths
+from cs_test.constants import Paths
 
 TestPathType = Callable[[str], Path]
 

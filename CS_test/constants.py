@@ -1,8 +1,9 @@
-from datetime import datetime
+import datetime as dt
 from pathlib import Path
 
-TIMESTAMP = datetime.now().strftime("%Y%M%d-%H%M%S")
+TIMESTAMP = dt.datetime.now(tz=dt.timezone.utc).strftime("%Y%M%d-%H%M%S")
 CS_PATH = Path.cwd()
+
 
 class Paths:
     USER_DATA = CS_PATH / "user_data"
@@ -10,6 +11,7 @@ class Paths:
     PROJECTS_PATH = CS_PATH.parents[0]
     INVALID_LINE_FILE = "invalid_line.csv"
     TEST_PATH = Path("tests/test_data")
+
 
 OPERATORS = ["(", ")", ">=", "<=", ">", "<", "=", "!=", "!", "NOT"]
 CONNECTORS = ["AND", "OR"]

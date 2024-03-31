@@ -6,7 +6,7 @@ license = "MIT"
 authors = ["p-sin <p-sinfield@live.co.uk>"]
 readme = "README.md"
 repository = "https://github.com/p-sin/CS_test"
-packages = [{ include = "CS_test" }]
+packages = [{ include = "cs_test" }]
 
 exclude = [
     ".github",
@@ -44,25 +44,25 @@ pytest-mock = "^3.10.0"
 coverage = "^7.4.4"
 
 [tool.poetry.scripts]
-CS_test = "CS_test.cli:cs_test"
+cs_test = "cs_test.cli:cs_test"
 
 [tool.mypy]
-mypy_path = ["CS_test"]
+mypy_path = ["cs_test"]
 strict = true
 namespace_packages = false
 
 
 [tool.pytest.ini_options]
-pythonpath = ["CS_test"]
-addopts = "--cov=CS_test"
+pythonpath = ["cs_test"]
+addopts = "--cov=cs_test"
 testpaths = ["tests/"]
 
 [tool.coverage.paths]
-source = ["CS_test"]
+source = ["cs_test"]
 
 [tool.coverage.run]
 branch = true
-source = ["CS_test"]
+source = ["cs_test"]
 
 [tool.coverage.report]
 show_missing = true
@@ -196,7 +196,7 @@ line-ending = "auto"
 convention = "google"
 
 [tool.ruff.lint.isort]
-known-first-party = ["CS_test"]
+known-first-party = ["cs_test"]
 
 
 [build-system]

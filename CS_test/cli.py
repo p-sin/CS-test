@@ -1,6 +1,6 @@
 import click
 
-from CS_test.config import Config
+from cs_test.config import Config
 
 
 @click.command()

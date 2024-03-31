@@ -20,6 +20,7 @@ PYTHON_VERSIONS = ["3.10", "3.11", "3.12"]
 PYPY3_VERSION = "pypy3"
 LATEST_PYTHON = PYTHON_VERSIONS[-1]
 
+
 @nox.session(python=PYTHON_VERSIONS, tags=["test"])
 def pytest(session: nox.Session) -> None:
     """Run the test suite with pytest."""
