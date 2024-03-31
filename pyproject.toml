@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "CS_test"
+name = "cs_test"
 version = "0.1.0"
 description = ""
 license = "MIT"
