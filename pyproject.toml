@@ -55,7 +55,7 @@ namespace_packages = false
 [tool.pytest.ini_options]
 pythonpath = ["CS_test"]
 addopts = "--cov=CS_test"
-testpaths = ["tests"]
+testpaths = ["tests/"]
 
 [tool.coverage.paths]
 source = ["CS_test"]
