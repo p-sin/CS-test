@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "CS_test"
+name = "cs_test"
 version = "0.1.0"
 description = ""
 license = "MIT"
 authors = ["p-sin <p-sinfield@live.co.uk>"]
 readme = "README.md"
 repository = "https://github.com/p-sin/CS_test"
-packages = [{ include = "CS_test" }]
+packages = [{ include = "cs_test" }]
 
 exclude = [
     ".github",
@@ -20,9 +20,10 @@ exclude = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
+click = "^8.1.7"
 
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.dev-dependencies]      
 # runner
 nox = "^2022.11.21"
 pre-commit = "^3.5.0"
@@ -42,27 +43,26 @@ pytest-cov = "^5.0.0"
 pytest-mock = "^3.10.0"
 coverage = "^7.4.4"
 
-# Scripts that can be called from CLI
-# [tool.poetry.scripts]
-# CS_test = "CS_test.a:a"
+[tool.poetry.scripts]
+cs_test = "cs_test.cli:cs_test"
 
 [tool.mypy]
-mypy_path = ["CS_test"]
+mypy_path = ["cs_test"]
 strict = true
 namespace_packages = false
 
 
 [tool.pytest.ini_options]
-pythonpath = ["CS_test"]
-addopts = "--cov=CS_test"
-testpaths = ["tests"]
+pythonpath = ["cs_test"]
+addopts = "--cov=cs_test"
+testpaths = ["tests/"]
 
 [tool.coverage.paths]
-source = ["CS_test"]
+source = ["cs_test"]
 
 [tool.coverage.run]
 branch = true
-source = ["CS_test"]
+source = ["cs_test"]
 
 [tool.coverage.report]
 show_missing = true
@@ -196,7 +196,7 @@ line-ending = "auto"
 convention = "google"
 
 [tool.ruff.lint.isort]
-known-first-party = ["CS_test"]
+known-first-party = ["cs_test"]
 
 
 [build-system]
