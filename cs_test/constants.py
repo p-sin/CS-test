@@ -1,11 +1,14 @@
 import datetime as dt
 from pathlib import Path
 
+
 TIMESTAMP = dt.datetime.now(tz=dt.timezone.utc).strftime("%Y%M%d-%H%M%S")
 CS_PATH = Path.cwd()
 
 
 class Paths:
+    """Class containing all required paths for the application."""
+
     USER_DATA = CS_PATH / "user_data"
     DATA_PATH = CS_PATH / "data"
     PROJECTS_PATH = CS_PATH.parents[0]

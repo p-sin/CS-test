@@ -1,7 +1,7 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
-# from cstest.content.files.file import File
+from cs_test.files.file import File
 
 
 @dataclass
@@ -12,7 +12,7 @@ class Project:
     project_folder: Path
     test_path: Path
     ignored_files: list[str]
-    # files: list[File] = field(init=False)
+    files: list[File] = field(init=False)
 
     @property
     def file_list(self) -> list[Path]:
@@ -28,11 +28,15 @@ class Project:
         """Number of txt files in the project folder."""
         return len(self.file_list)
 
-    # def parse_files(self) -> None:
-    #     self.files = [File(self.project_folder / file) for file in self.file_list]
-    #     for file in self.files:
-    #         file.parse_code()
+    def parse_files(self) -> None:
+        """Read CS project files and convert them to the CS_test model."""
+        self.files = [File(self.project_folder / file) for file in self.file_list]
+        for file in self.files:
+            file.parse_code()
 
     def test_project(self) -> None:
-        """pass."""
-        # self.parse_files()
+        """Control flow for the Project class."""
+        self.parse_files()
+
+        for file in self.files:
+            print(file.code)
