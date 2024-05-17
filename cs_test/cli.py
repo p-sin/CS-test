@@ -12,7 +12,7 @@ def cs_test() -> None:
 
     project = Project(
         project_name=config.project_name,
-        project_folder=config.project_path,
+        project_path=config.project_path,
         test_path=config.test_path,
         ignored_files=config.ignored_files,
     )
