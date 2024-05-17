@@ -9,7 +9,7 @@ class Project:
     """Project class container for all CS_test functionality."""
 
     project_name: str
-    project_folder: Path
+    project_path: Path
     test_path: Path
     ignored_files: list[str]
     files: list[File] = field(init=False)
@@ -19,7 +19,7 @@ class Project:
         """All txt files in the project folder."""
         return [
             file
-            for file in self.project_folder.glob("*.txt")
+            for file in self.project_path.glob("*.txt")
             if not any(ignored == file.stem for ignored in self.ignored_files)
         ]
 
@@ -30,13 +30,10 @@ class Project:
 
     def parse_files(self) -> None:
         """Read CS project files and convert them to the CS_test model."""
-        self.files = [File(self.project_folder / file) for file in self.file_list]
+        self.files = [File(self.project_path / file) for file in self.file_list]
         for file in self.files:
             file.parse_code()
 
     def test_project(self) -> None:
         """Control flow for the Project class."""
         self.parse_files()
-
-        for file in self.files:
-            print(file.code)

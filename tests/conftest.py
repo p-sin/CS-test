@@ -26,7 +26,7 @@ def fix_project() -> Project:
     """Fixture to create default Project class."""
     return Project(
         project_name="project_name",
-        project_folder=Path(),
+        project_path=Path(),
         test_path=Path(),
         ignored_files=["choicescript_stats"],
     )

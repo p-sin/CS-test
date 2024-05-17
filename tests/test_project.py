@@ -12,7 +12,7 @@ def test_project_file_list(test_path: TestPathType, project: Project) -> None:
     for file in ["A.txt", "B.csv", "C.txt", "D.toml"]:
         (path / file).touch()
 
-    project.project_folder = path
+    project.project_path = path
 
     assert sorted(project.file_list) == [path / "A.txt", path / "C.txt"]
 
