@@ -44,7 +44,7 @@ class Choice(Command):
     command_name = "CHOICE"
 
 
-class Commwnr(Command):
+class Comment(Command):
     command_type = "Comment"
     command_name = "COMMENT"
 
@@ -247,3 +247,54 @@ class Temp(Command):
 class Title(Command):
     command_type = "Misc"
     command_name = "TITLE"
+
+
+command_mapper: dict[str, Command] = {
+    "ACHIEVE": Achieve(),
+    "ACHIEVEMENT": Achievement(),
+    "ALLOW_REUSE": AllowReuse(),
+    "AUTHOR": Author(),
+    "BUG": Bug(),
+    "CHECK_ACHIEVEMENTS": CheckAchievements(),
+    "CHOICE": Choice(),
+    "COMMENT": Comment(),
+    "CREATE": Create(),
+    "DELETE": Delete(),
+    "DISABLE_REUSE": DisableReuse(),
+    "ELSE": Else(),
+    "ELSEIF": ElseIf(),
+    "ENDING": Ending(),
+    "FAKE_CHOICE": FakeChoice(),
+    "FINISH": Finish(),
+    "GOSUB": Gosub(),
+    "GOSUB_SCENE": GosubScene(),
+    "GOTO": Goto(),
+    "GOTOREF": GotoRef(),
+    "GOTO_RANDOM_SCENE": GotoRandomScene(),
+    "GOTO_SCENE": GotoScene(),
+    "HIDE_REUSE": HideReuse(),
+    "IF": If(),
+    "IMAGE": Image(),
+    "IMPLICIT_CONTROL_FLOW": ImplicitControlFlow(),
+    "INPUT_NUMBER": InputNumber(),
+    "INPUT_TEXT": InputText(),
+    "LABEL": Label(),
+    "LINE_BREAK": LineBreak(),
+    "LINK": Link(),
+    "LOOPLIMIT": LoopLimit(),
+    "MORE_GAMES": MoreGames(),
+    "MULTIREPLACE": Multireplace(),
+    "PAGE_BREAK": PageBreak(),
+    "PRINT": Print(),
+    "RAND": Rand(),
+    "SETREF": SetRef(),
+    "SCENE_LIST": SceneList(),
+    "SCRIPT": Script(),
+    "SELECTABLE_IF": SelectableIf(),
+    "SET": Set(),
+    "SHARE_THIS_GAME": ShareThisGame(),
+    "SHOW_PASSWORD": ShowPassword(),
+    "SOUND": Sound(),
+    "TEMP": Temp(),
+    "TITLE": Title(),
+}
