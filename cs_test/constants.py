@@ -1,7 +1,6 @@
 import datetime as dt
 from pathlib import Path
 
-
 TIMESTAMP = dt.datetime.now(tz=dt.timezone.utc).strftime("%Y%M%d-%H%M%S")
 CS_PATH = Path.cwd()
 
