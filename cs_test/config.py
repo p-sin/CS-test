@@ -9,11 +9,15 @@ class Config:
     """Class to encapsulate all project level configuration for powering cs_test.
 
     Contains:
-    - project_name [str]: Folder name containing CS project to be tested
-    - project_path [Path]: Pathlib object containing path to CS project folder
-    - test_path [Path]: Pathlib object containing path to output folder for cs_test
-    for this CS project
-    - ignored_files [list[str]]: Any files in the CS project to be ignored
+    ---------
+    project_name [str]:
+        Folder name containing CS project to be tested
+    project_path [Path]:
+        Pathlib object containing path to CS project folder
+    test_path [Path]:
+        Pathlib object containing path to output folder for cs_test for this CS project
+    ignored_files [list[str]]:
+        Any files in the CS project to be ignored
     """
 
     project_name: str = field(init=False)
@@ -32,10 +36,8 @@ class Config:
     def set_folder_path(self) -> None:
         """Sets project path based on user input.
 
-        if a CS project with that name exists in the projects_path.
-
-        Returns:
-        None
+        if a CS project does not exisr with that name in the projects_path then
+        continues to ask for a valid folder name.
         """
         self.project_name = self.ask_folder_name()
         self.project_path = Paths.PROJECTS_PATH / self.project_name
