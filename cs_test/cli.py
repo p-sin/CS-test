@@ -8,7 +8,7 @@ from cs_test.project import Project
 def cs_test() -> None:
     """Entry point to CS test tool."""
     config = Config()
-    config.config_test()
+    config.setup()
 
     project = Project(
         project_name=config.project_name,
