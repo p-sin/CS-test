@@ -5,16 +5,14 @@ from unittest.mock import Mock, patch
 from click.testing import CliRunner
 
 from cs_test.cli import Config, Project, cs_test
-from tests.conftest import TestPathType
+from tests.conftest import create_test_path
 
 
-@patch("cs_test.cli.Config.config_test", autospec=True)
+@patch("cs_test.cli.Config.setup", autospec=True)
 @patch("cs_test.cli.Project.test_project", autospec=True)
-def test_cs_test(
-    mock_project: Mock, mock_config: Mock, test_path: TestPathType
-) -> None:
+def test_cs_test(mock_project: Mock, mock_config: Mock) -> None:
     """Test the cs_test function."""
-    path = test_path("cs_test")
+    path = create_test_path("cs_test")
 
     def mock_config_func(self: Config) -> None:
         self.project_name = "proj_name"
