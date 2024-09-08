@@ -4,7 +4,9 @@ from unittest.mock import Mock, patch
 
 from click.testing import CliRunner
 
-from cs_test.cli import Config, Project, cs_test
+from cs_test.cli import cs_test
+from cs_test.config import Config
+from cs_test.project import Project
 from tests.conftest import create_test_path
 
 
