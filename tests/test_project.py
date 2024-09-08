@@ -2,17 +2,17 @@ import shutil
 from unittest.mock import Mock, PropertyMock, patch
 
 from cs_test.project import Project
-from tests.conftest import TestPathType
+from tests.conftest import create_test_path
 
 
-def test_project_file_list(test_path: TestPathType, project: Project) -> None:
+def test_project_file_list(project: Project) -> None:
     """Asseert that the file_list property correctly parses the project folder."""
-    path = test_path("project_file_list")
+    path = create_test_path("project_file_list")
 
     for file in ["A.txt", "B.csv", "C.txt", "D.toml"]:
         (path / file).touch()
 
-    project.project_folder = path
+    project.project_path = path
 
     assert sorted(project.file_list) == [path / "A.txt", path / "C.txt"]
 

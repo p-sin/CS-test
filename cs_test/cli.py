@@ -8,11 +8,11 @@ from cs_test.project import Project
 def cs_test() -> None:
     """Entry point to CS test tool."""
     config = Config()
-    config.config_test()
+    config.setup()
 
     project = Project(
         project_name=config.project_name,
-        project_folder=config.project_path,
+        project_path=config.project_path,
         test_path=config.test_path,
         ignored_files=config.ignored_files,
     )

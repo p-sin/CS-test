@@ -1,6 +1,6 @@
 files: >
   (?x)^(
-    py_template/ |
+    cs_test/ |
     ^tests/
   )
 repos:

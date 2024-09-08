@@ -19,7 +19,7 @@ exclude = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 click = "^8.1.7"
 
 
@@ -147,6 +147,7 @@ ignore = [
     "DTZ011",  # naive datetime is used, but it's OK for the user to use it
     "ERA001",  # commented-out code is OK in some cases
     "E501",    # line size, but bug-bear already set it with a tolerance of 10% (B950)
+    "ISC001",
     "PD901",   # allow use of `df` for dataframes
     "PD003",   # allow .isna() and .isnull() for dataframes
     "PD004",   # allow .notna() and .notnull() for dataframes
