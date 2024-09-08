@@ -1,7 +1,7 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 
-from cs_test.files.file import File
+# from cs_test.files.file import File
 
 
 @dataclass
@@ -12,7 +12,7 @@ class Project:
     project_path: Path
     test_path: Path
     ignored_files: list[str]
-    files: dict[str, File] = field(init=False, default_factory=dict)
+    # files: dict[str, File] = field(init=False, default_factory=dict)
 
     @property
     def file_list(self) -> list[Path]:
@@ -41,11 +41,11 @@ class Project:
 
         The code in each file is parsed and mapped into the File class.
         """
-        self.files = {
-            file.stem: File(self.project_path / file) for file in self.file_list
-        }
-        for file in self.files.values():
-            file.parse_code()
+        # self.files = {
+        #     file.stem: File(self.project_path / file) for file in self.file_list
+        # }
+        # for file in self.files.values():
+        #     file.parse_code()
 
     def test_project(self) -> None:
         """Control flow for the Project class."""
